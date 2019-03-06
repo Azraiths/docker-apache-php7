@@ -4,8 +4,7 @@ MAINTAINER Alexander Schenkel <alex@alexi.ch>
 VOLUME ["/var/www"]
 
 RUN apt-get update && \
-	apt-get install -y \
-	software-properties-common && 
+	apt-get install software-properties-common && \
 	add-apt-repository ppa:ondrej/php && \
 	apt-get update && \
     apt-get dist-upgrade -y && \
