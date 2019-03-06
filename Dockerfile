@@ -5,7 +5,7 @@ VOLUME ["/var/www"]
 
 RUN apt-get update --fix-missing
 RUN apt-get install software-properties-common
-RUB add-apt-repository ppa:ondrej/php
+RUN add-apt-repository ppa:ondrej/php
 
 RUN apt-get update && \
     apt-get dist-upgrade -y && \
