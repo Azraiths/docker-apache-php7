@@ -3,10 +3,11 @@ MAINTAINER Alexander Schenkel <alex@alexi.ch>
 
 VOLUME ["/var/www"]
 
+RUN apt-get update --fix-missing
+RUN apt-get install software-properties-common
+RUB add-apt-repository ppa:ondrej/php
+
 RUN apt-get update && \
-	apt-get install software-properties-common && \
-	add-apt-repository ppa:ondrej/php && \
-	apt-get update && \
     apt-get dist-upgrade -y && \
     apt-get install -y \
       apache2 \
@@ -17,15 +18,10 @@ RUN apt-get update && \
       php-xdebug \
       php7.2-gd \
       php7.2-json \
-      php7.2-ldap \
       php7.2-mbstring \
       php7.2-mysql \
-      php7.2-pgsql \
-      php7.2-sqlite3 \
       php7.2-xml \
-      php7.2-xsl \
       php7.2-zip \
-      php7.2-soap \
       php7.2-opcache \
       libargon2-0 \
       libsodium23 \
