@@ -3,9 +3,10 @@ MAINTAINER Alexander Schenkel <alex@alexi.ch>
 
 VOLUME ["/var/www"]
 
-RUN apt-get update --fix-missing
+RUN apt-get update
+RUN apt-get install -y language-pack-en-base
 RUN apt-get install -y software-properties-common
-RUN add-apt-repository ppa:ondrej/php
+RUN LC_ALL=en_US.UTF-8 add-apt-repository -y ppa:ondrej/php
 
 RUN apt-get update && \
     apt-get dist-upgrade -y && \
